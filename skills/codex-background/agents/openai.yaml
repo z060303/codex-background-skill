@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 背景定制"
+  short_description: "用喜欢的图片制作 Codex 背景，调整清晰度并设置登录自动恢复"
+  default_prompt: "使用 $codex-background，把我提供的图片做成清晰、自然的 Codex 背景，并按我的需要设置自启动。"

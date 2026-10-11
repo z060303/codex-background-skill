@@ -1,0 +1,76 @@
+/* Original starter. CodeFace owns the wallpaper layer and native layout. */
+:root.codeface {
+  --cb-reading-surface: rgba(__PANEL_RGB__, __SURFACE_OPACITY__);
+  color-scheme: __COLOR_SCHEME__ !important;
+}
+html.codeface body,
+html.codeface[data-codeface-shell] body {
+  background: var(--cf-bg) var(--codeface-art, none) var(--codeface-background-position, center) / cover no-repeat fixed !important;
+  color: var(--cf-text) !important;
+}
+html.codeface body::before {
+  content: none !important;
+}
+html.codeface main.main-surface,
+html.codeface[data-codeface-shell] main.main-surface {
+  background: transparent !important;
+}
+html.codeface aside.app-shell-left-panel,
+html.codeface[data-codeface-shell] aside.app-shell-left-panel {
+  background: var(--cb-reading-surface) !important;
+  color: var(--cf-text) !important;
+}
+html.codeface [data-message-author-role="assistant"] {
+  color: var(--cf-text);
+  font-weight: 400;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+}
+html.codeface [data-message-author-role="assistant"] :is(p, li) {
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+html.codeface [data-message-author-role="assistant"] :is(strong, h1, h2, h3) {
+  font-weight: 600;
+}
+html.codeface main.main-surface article,
+html.codeface[data-codeface-shell] main.main-surface article,
+html.codeface .composer-surface-chrome,
+html.codeface[data-codeface-shell] .composer-surface-chrome {
+  background: var(--cb-reading-surface) !important;
+  color: var(--cf-text);
+  border-color: var(--cf-line);
+  backdrop-filter: blur(12px);
+}
+html.codeface main.main-surface article {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .05);
+}
+html.codeface .composer-surface-chrome::before {
+  content: none !important;
+}
+html.codeface .composer-surface-chrome :is(textarea, [contenteditable="true"]) {
+  color: var(--cf-text) !important;
+  background: transparent !important;
+}
+html.codeface article pre {
+  background-color: var(--cf-panel-2);
+  overflow-x: auto;
+}
+html.codeface :is([role="dialog"], [role="menu"]) {
+  background-color: var(--cf-panel);
+  color: var(--cf-text);
+}
+html.codeface :is(button, a, textarea):focus-visible {
+  outline: 2px solid var(--cf-cyan, currentColor);
+  outline-offset: 2px;
+}
+@media (max-width: 800px) {
+  html.codeface main.main-surface article {
+    border-radius: 10px;
+    box-shadow: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.codeface #codeface-chrome { animation: none !important; }
+}
